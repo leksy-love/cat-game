@@ -3,6 +3,7 @@ import os
 import sys
 import time
 
+s = 0
 xb = 0
 yb = 0
 coords = []
@@ -11,6 +12,7 @@ size = 700, 700
 screen = pygame.display.set_mode(size)
 FPS = 50
 clock = pygame.time.Clock()
+
 
 def game_screen():
     fon = pygame.transform.scale(load_image('game.png'), (700, 700))
@@ -145,7 +147,8 @@ class Board:
 
     # cell - кортеж (x, y)
     def on_click(self, cell):
-        global xb, yb
+        global xb, yb, s
+        s += 1
         x, y = cell
         xb = cell[0]
         yb = cell[1]
